@@ -66,7 +66,7 @@ public class StudentService {
                 });
     }
 
-    public Mono<Student> enrrollStudent(String studentId) {
+    public Mono<Student> enrollStudent(String studentId) {
         return repo.findById(studentId)
                 .flatMap(student -> {
                     log.info("Enrolled");

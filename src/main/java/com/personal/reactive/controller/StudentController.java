@@ -3,17 +3,12 @@ package com.personal.reactive.controller;
 import com.personal.reactive.model.Student;
 import com.personal.reactive.model.StudentStatus;
 import com.personal.reactive.service.StudentService;
-
-import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping(value = "/students")
@@ -48,6 +43,6 @@ public class StudentController {
 
     @PutMapping(value = "/enroll/{studentId}")
     public Mono<Student> enrollStudent(@PathVariable String studentId) {
-        return service.enrrollStudent(studentId);
+        return service.enrollStudent(studentId);
     }
 }
