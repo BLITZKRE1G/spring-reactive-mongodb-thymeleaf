@@ -73,4 +73,8 @@ public class StudentService {
                     return repo.save(student);
                 });
     }
+
+    public Flux<Student> findAllByStatus(StudentStatus status) {
+        return repo.findByStatus(status);
+    }
 }

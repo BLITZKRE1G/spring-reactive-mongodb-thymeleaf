@@ -45,4 +45,9 @@ public class StudentController {
     public Mono<Student> enrollStudent(@PathVariable String studentId) {
         return service.enrollStudent(studentId);
     }
+
+    @GetMapping(value = "/fetch/{status}")
+    public Flux<Student> findByStatus (@PathVariable StudentStatus status) {
+        return service.findAllByStatus(status);
+    }
 }
